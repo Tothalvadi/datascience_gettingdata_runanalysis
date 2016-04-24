@@ -16,8 +16,10 @@ Table contains 81 columns. The first two contain identifiers to describe the con
 Columns 3 through 81 contain the observations. 
 
 ###Identifiers
-1. subjectid - A unique identifier for the different subjects who partook in the experiment
-2. activity - A description of the activity undertaken. 
+|No.|Column header|Type|Description|
+|---|----------|----------|------------------------------------------------------------------------|
+|1|subjectid|Integer|A unique identifier for the different subjects who partook in the experiment.|
+|2|activity|Character|A description of the activity undertaken.| 
 
 ###Observations
 The observations are described in the features_info.txt file contained in the UCI HAR dataset. I will include a small excerpt 
@@ -29,86 +31,91 @@ to describe the columns below:
 >
 >Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 >
->These signals were used to estimate variables of the feature vector for each pattern:  
+>These signals were used to estimate variables of the feature vector for each pattern:
 >'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 For each feature only the average(mean) and standard deviation(std) have been selected. 
-3. tBodyAcc-mean()-X
-4. tBodyAcc-mean()-Y
-5. tBodyAcc-mean()-Z
-6. tBodyAcc-std()-X
-7. tBodyAcc-std()-Y
-8. tBodyAcc-std()-Z
-9. tGravityAcc-mean()-X
-10. tGravityAcc-mean()-Y
-11. tGravityAcc-mean()-Z
-12. tGravityAcc-std()-X
-13. tGravityAcc-std()-Y
-14. tGravityAcc-std()-Z
-15. tBodyAccJerk-mean()-X
-16. tBodyAccJerk-mean()-Y
-17. tBodyAccJerk-mean()-Z
-18. tBodyAccJerk-std()-X
-19. tBodyAccJerk-std()-Y
-20. tBodyAccJerk-std()-Z
-21. tBodyGyro-mean()-X
-22. tBodyGyro-mean()-Y
-23. tBodyGyro-mean()-Z
-24. tBodyGyro-std()-X
-25. tBodyGyro-std()-Y
-26. tBodyGyro-std()-Z
-27. tBodyGyroJerk-mean()-X
-28. tBodyGyroJerk-mean()-Y
-29. tBodyGyroJerk-mean()-Z
-30. tBodyGyroJerk-std()-X
-31. tBodyGyroJerk-std()-Y
-32. tBodyGyroJerk-std()-Z
-33. tBodyAccMag-mean()
-34. tBodyAccMag-std()
-35. tGravityAccMag-mean()
-36. tGravityAccMag-std()
-37. tBodyAccJerkMag-mean()
-38. tBodyAccJerkMag-std()
-39. tBodyGyroMag-mean()
-40. tBodyGyroMag-std()
-41. tBodyGyroJerkMag-mean()
-42. tBodyGyroJerkMag-std()
-43. fBodyAcc-mean()-X
-44. fBodyAcc-mean()-Y
-45. fBodyAcc-mean()-Z
-46. fBodyAcc-std()-X
-47. fBodyAcc-std()-Y
-48. fBodyAcc-std()-Z
-49. fBodyAcc-meanFreq()-X
-50. fBodyAcc-meanFreq()-Y
-51. fBodyAcc-meanFreq()-Z
-52. fBodyAccJerk-mean()-X
-53. fBodyAccJerk-mean()-Y
-54. fBodyAccJerk-mean()-Z
-55. fBodyAccJerk-std()-X
-56. fBodyAccJerk-std()-Y
-57. fBodyAccJerk-std()-Z
-58. fBodyAccJerk-meanFreq()-X
-59. fBodyAccJerk-meanFreq()-Y
-60. fBodyAccJerk-meanFreq()-Z
-61. fBodyGyro-mean()-X
-62. fBodyGyro-mean()-Y
-63. fBodyGyro-mean()-Z
-64. fBodyGyro-std()-X
-65. fBodyGyro-std()-Y
-66. fBodyGyro-std()-Z
-67. fBodyGyro-meanFreq()-X
-68. fBodyGyro-meanFreq()-Y
-69. fBodyGyro-meanFreq()-Z
-70. fBodyAccMag-mean()
-71. fBodyAccMag-std()
-72. fBodyAccMag-meanFreq()
-73. fBodyBodyAccJerkMag-mean()
-74. fBodyBodyAccJerkMag-std()
-75. fBodyBodyAccJerkMag-meanFreq()
-76. fBodyBodyGyroMag-mean()
-77. fBodyBodyGyroMag-std()
-78. fBodyBodyGyroMag-meanFreq()
-79. fBodyBodyGyroJerkMag-mean()
-80. fBodyBodyGyroJerkMag-std()
-81. fBodyBodyGyroJerkMag-meanFreq()
+
+
+
+|No.|Column header|Type|
+|---|----------------|----------------| 
+|3|tBodyAcc-mean()-X|Numeric|
+|4|tBodyAcc-mean()-Y|Numeric|
+|5|tBodyAcc-mean()-Z|Numeric|
+|6|tBodyAcc-std()-X|Numeric|
+|7|tBodyAcc-std()-Y|Numeric|
+|8|tBodyAcc-std()-Z|Numeric|
+|9|tGravityAcc-mean()-X|Numeric|
+|10|tGravityAcc-mean()-Y|Numeric|
+|11|tGravityAcc-mean()-Z|Numeric|
+|12|tGravityAcc-std()-X|Numeric|
+|13|tGravityAcc-std()-Y|Numeric|
+|14|tGravityAcc-std()-Z|Numeric|
+|15|tBodyAccJerk-mean()-X|Numeric|
+|16|tBodyAccJerk-mean()-Y|Numeric|
+|17|tBodyAccJerk-mean()-Z|Numeric|
+|18|tBodyAccJerk-std()-X|Numeric|
+|19|tBodyAccJerk-std()-Y|Numeric|
+|20|tBodyAccJerk-std()-Z|Numeric|
+|21|tBodyGyro-mean()-X|Numeric|
+|22|tBodyGyro-mean()-Y|Numeric|
+|23|tBodyGyro-mean()-Z|Numeric|
+|24|tBodyGyro-std()-X|Numeric|
+|25|tBodyGyro-std()-Y|Numeric|
+|26|tBodyGyro-std()-Z|Numeric|
+|27|tBodyGyroJerk-mean()-X|Numeric|
+|28|tBodyGyroJerk-mean()-Y|Numeric|
+|29|tBodyGyroJerk-mean()-Z|Numeric|
+|30|tBodyGyroJerk-std()-X|Numeric|
+|31|tBodyGyroJerk-std()-Y|Numeric|
+|32|tBodyGyroJerk-std()-Z|Numeric|
+|33|tBodyAccMag-mean()|Numeric|
+|34|tBodyAccMag-std()|Numeric|
+|35|tGravityAccMag-mean()|Numeric|
+|36|tGravityAccMag-std()|Numeric|
+|37|tBodyAccJerkMag-mean()|Numeric|
+|38|tBodyAccJerkMag-std()|Numeric|
+|39|tBodyGyroMag-mean()|Numeric|
+|40|tBodyGyroMag-std()|Numeric|
+|41|tBodyGyroJerkMag-mean()|Numeric|
+|42|tBodyGyroJerkMag-std()|Numeric|
+|43|fBodyAcc-mean()-X|Numeric|
+|44|fBodyAcc-mean()-Y|Numeric|
+|45|fBodyAcc-mean()-Z|Numeric|
+|46|fBodyAcc-std()-X|Numeric|
+|47|fBodyAcc-std()-Y|Numeric|
+|48|fBodyAcc-std()-Z|Numeric|
+|49|fBodyAcc-meanFreq()-X|Numeric|
+|50|fBodyAcc-meanFreq()-Y|Numeric|
+|51|fBodyAcc-meanFreq()-Z|Numeric|
+|52|fBodyAccJerk-mean()-X|Numeric|
+|53|fBodyAccJerk-mean()-Y|Numeric|
+|54|fBodyAccJerk-mean()-Z|Numeric|
+|55|fBodyAccJerk-std()-X|Numeric|
+|56|fBodyAccJerk-std()-Y|Numeric|
+|57|fBodyAccJerk-std()-Z|Numeric|
+|58|fBodyAccJerk-meanFreq()-X|Numeric|
+|59|fBodyAccJerk-meanFreq()-Y|Numeric|
+|60|fBodyAccJerk-meanFreq()-Z|Numeric|
+|61|fBodyGyro-mean()-X|Numeric|
+|62|fBodyGyro-mean()-Y|Numeric|
+|63|fBodyGyro-mean()-Z|Numeric|
+|64|fBodyGyro-std()-X|Numeric|
+|65|fBodyGyro-std()-Y|Numeric|
+|66|fBodyGyro-std()-Z|Numeric|
+|67|fBodyGyro-meanFreq()-X|Numeric|
+|68|fBodyGyro-meanFreq()-Y|Numeric|
+|69|fBodyGyro-meanFreq()-Z|Numeric|
+|70|fBodyAccMag-mean()|Numeric|
+|71|fBodyAccMag-std()|Numeric|
+|72|fBodyAccMag-meanFreq()|Numeric|
+|73|fBodyBodyAccJerkMag-mean()|Numeric|
+|74|fBodyBodyAccJerkMag-std()|Numeric|
+|75|fBodyBodyAccJerkMag-meanFreq()|Numeric|
+|76|fBodyBodyGyroMag-mean()|Numeric|
+|77|fBodyBodyGyroMag-std()|Numeric|
+|78|fBodyBodyGyroMag-meanFreq()|Numeric|
+|79|fBodyBodyGyroJerkMag-mean()|Numeric|
+|80|fBodyBodyGyroJerkMag-std()|Numeric|
+|81|fBodyBodyGyroJerkMag-meanFreq()|Numeric|
