@@ -1,4 +1,3 @@
-
 #This function will read the test and train datasets from the 
 # UCI HAR Dataset and combine them into one main dataset. 
 # Only mean and standard deviation observations will be retained. 
@@ -80,9 +79,9 @@ run_analysis <- function(basepath = './UCI HAR Dataset')
         yfilepath = paste(path, yfilename, sep="/")
         yfile <- read.fwf(yfilepath, 2, colClasses = "integer", col.names ="activityid")
         #We merge yfile with the activity labels we defined earlier and only select
-        #the labels column at the end. 
-        yfile <- merge(activitiesfile, yfile, x.by="activityid", y.by="activityid")
-        yfile <- yfile[,2]
+        #the labels column at the end.  DON'T SORT THE FILES
+        # yfile <- merge( yfile, activitiesfile, x.by="activityid", y.by="activityid", sort = FALSE)
+        # yfile <- yfile[,2]
         
         #The subjects are being selected here and added to their own dataframe. 
         subjectfilename <- paste(paste("subject", type, sep="_" ), "txt", sep=".")
@@ -91,9 +90,10 @@ run_analysis <- function(basepath = './UCI HAR Dataset')
         
         #all three dataframes are now being combined to one. 
         result  <- cbind( subjectfile, yfile, xfile)
-        #Activity lost it's column name when it got converted to vector. It's being added again here. 
-        colnames(result)[2] <- "activity"
-        #return the result. 
+        result <- merge(activitiesfile, result,  x.by="activityid", y.by="activityid", sort = FALSE)
+        
+        #We can remove activityid
+        result <- result[,-1]
         result
     }
     
@@ -103,20 +103,23 @@ run_analysis <- function(basepath = './UCI HAR Dataset')
     testdata <- readdataset("test")
     #merge both datasets
     data <- rbind(traindata, testdata)
+
+    
     
     #turn the dataframe into a dplyr table for easier manipulation. 
     data <- tbl_df(data)
     
     #A result table is being created based on the data table. 
+    #Because we like to make sure our is data ordered, we put in an arrange at no extra cost :)
+    result <- arrange(result, subjectid, activity)
     #First we group the data based on subjectid and activity
     result  <- group_by(data, subjectid, activity)
     #Then we average every other column with the summarise_each function. 
     result <- summarise_each(result, funs(mean))
-    #Because we like to make sure our is data ordered, we put in an arrange at no extra cost :)
-    result <- arrange(result, subjectid, activity)
+    
     
     #The result is a table with 81 columns containing 79 averaged observations grouped
     #on the subjectid and the activity performed. 
     result
-    
+   
 }

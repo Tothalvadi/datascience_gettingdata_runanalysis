@@ -8,7 +8,7 @@ The format of the return object is a dplyr table containing two identifying colu
 The UCI HAR dataset contains test and training data. These datasets have been merged by the run_analysis script as a single dataframe. The activity labels in y_test.txt and y_train.txt have been replaced with the proper activity descriptions found in the activity_labels.txt file. Column headers voor the X_train.txt and the X_test.txt files have been added from the features.txt file. 
 Only certain columns in the X files are selected. Only average and standard deviation columns are required. A filter is therefore based on wether or not the column header either contains a "mean()"(average function) or an "std()"(standard deviation function) string. 
 
-A summary will be performed on the datasets after they have been combined into one. A grouping will be performed on the subjectid and the activity columns. All the other columns will be averaged with the mean() function. The result is a 40 x 81 dplyr table containing the grouping elements and the averaged observations. 
+A summary will be performed on the datasets after they have been combined into one. A grouping will be performed on the subjectid and the activity columns. All the other columns will be averaged with the mean() function. The result is a 180 x 81 dplyr table containing the grouping elements and the averaged observations. 
 
 
 ##Columns
